@@ -30,16 +30,16 @@
             line-height: 1.6;
         }
 
-       header {
-    /* Cambiamos de 0.75 a 0.40 para que la imagen sea mucho más clara y visible */
-    background: linear-gradient(rgba(15, 23, 42, 0.40), rgba(15, 23, 42, 0.40)), url('banner.jpeg');
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    padding: 5rem 2rem 4rem 2rem;
-    text-align: center;
-    border-bottom: 4px solid var(--primary);
-}
+        header {
+            /* Capas de transparencia para mantener clara la imagen */
+            background: linear-gradient(rgba(15, 23, 42, 0.40), rgba(15, 23, 42, 0.50)), url('banner.jpeg');
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            padding: 5rem 2rem 4rem 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--primary);
+        }
 
         header h1 {
             font-family: Georgia, "Times New Roman", serif;
@@ -47,13 +47,19 @@
             font-weight: 700;
             letter-spacing: -0.02em;
             margin-bottom: 0.75rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
+        /* -------------------------------------------------- */
+        /* SUBTÍTULO CON NEGRITAS Y COLOR BLANCO            */
+        /* -------------------------------------------------- */
         header p {
             font-size: 1.15rem;
             color: #ffffff;
+            font-weight: 600; /* 👈 Hace que el texto quede en negritas */
             max-width: 700px;
             margin: 0 auto;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); /* Sombra suave para mejor lectura */
         }
 
         .container {
