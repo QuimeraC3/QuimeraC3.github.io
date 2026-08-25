@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quimera C³ — Centro de Investigación, Docencia, Servicio y Difusión Institucional en Ciencias Médicas y Biotecnología.">
     <title>Quimera C³ — Centro de Investigación, Docencia y Servicio</title>
     <style>
         :root {
@@ -16,6 +17,10 @@
             --border-color: #e2e8f0;
             --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
             --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         * {
@@ -82,13 +87,23 @@
         /* ENCABEZADO PORTADA CON IMAGEN INTEGRADA             */
         /* -------------------------------------------------- */
         header {
-            background: linear-gradient(rgba(15, 23, 42, 0.55), rgba(15, 23, 42, 0.65)), url('Quimera C3.jpeg');
+            background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.75)), url('Quimera C3.jpeg');
             background-size: cover;
             background-position: center;
             color: #ffffff;
-            padding: 6rem 2rem 5rem 2rem;
+            padding: 4rem 2rem 4rem 2rem;
             text-align: center;
             border-bottom: 4px solid var(--primary);
+        }
+
+        .header-img {
+            max-width: 280px;
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         header h1 {
@@ -307,6 +322,25 @@
         }
 
         /* -------------------------------------------------- */
+        /* ADAPTABILIDAD MÓVIL (RESPONSIVE)                   */
+        /* -------------------------------------------------- */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.1rem;
+            }
+            header p {
+                font-size: 1.05rem;
+            }
+            .header-img {
+                max-width: 210px;
+            }
+            .top-bar-container {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+        }
+
+        /* -------------------------------------------------- */
         /* PIE DE PÁGINA                                      */
         /* -------------------------------------------------- */
         footer {
@@ -338,8 +372,10 @@
         </div>
     </nav>
 
-    <!-- Encabezado Principal con Imagen de Fondo -->
+    <!-- Encabezado Principal con Imagen de Portada -->
     <header>
+        <img src="Quimera C3.jpeg" alt="Quimera C³ Emblem" class="header-img">
+        <br>
         <span class="header-tag">&bull; Centro Educativo &bull;</span>
         <h1>QUIMERA C³</h1>
         <p>Docencia, Investigación, Servicio y Difusión Institucional en Ciencias Médicas y Biotecnología.</p>
