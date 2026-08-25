@@ -84,26 +84,16 @@
         }
 
         /* -------------------------------------------------- */
-        /* ENCABEZADO PORTADA CON IMAGEN INTEGRADA             */
+        /* ENCABEZADO PORTADA (DESPLAZADO A LA DERECHA)        */
         /* -------------------------------------------------- */
         header {
             background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.75)), url('Quimera.jpeg');
             background-size: cover;
             background-position: center;
             color: #ffffff;
-            padding: 4rem 2rem 4rem 2rem;
-            text-align: center;
+            padding: 5rem 3rem;
+            text-align: right;
             border-bottom: 4px solid var(--primary);
-        }
-
-        .header-img {
-            max-width: 280px;
-            width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-            margin-bottom: 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         header h1 {
@@ -120,7 +110,8 @@
             color: #ffffff;
             font-weight: 600;
             max-width: 800px;
-            margin: 0 auto;
+            margin-left: auto;
+            margin-right: 0;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
         }
 
@@ -325,14 +316,14 @@
         /* ADAPTABILIDAD MÓVIL (RESPONSIVE)                   */
         /* -------------------------------------------------- */
         @media (max-width: 768px) {
+            header {
+                padding: 3.5rem 1.5rem;
+            }
             header h1 {
                 font-size: 2.1rem;
             }
             header p {
                 font-size: 1.05rem;
-            }
-            .header-img {
-                max-width: 210px;
             }
             .top-bar-container {
                 flex-direction: column;
@@ -372,10 +363,8 @@
         </div>
     </nav>
 
-    <!-- Encabezado Principal con Imagen de Portada -->
+    <!-- Encabezado Principal Desplazado a la Derecha -->
     <header>
-        <img src="Quimera.jpeg" alt="Quimera C³ Emblem" class="header-img">
-        <br>
         <span class="header-tag">&bull; Centro Educativo &bull;</span>
         <h1>QUIMERA C³</h1>
         <p>Docencia, Investigación, Servicio y Difusión Institucional en Ciencias Médicas y Biotecnología.</p>
