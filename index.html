@@ -31,6 +31,7 @@
         }
 
         header {
+            /* Capas de transparencia para mantener clara la imagen */
             background: linear-gradient(rgba(15, 23, 42, 0.40), rgba(15, 23, 42, 0.50)), url('banner.jpeg');
             background-size: cover;
             background-position: center;
@@ -45,19 +46,17 @@
             font-size: 2.3rem;
             font-weight: 700;
             letter-spacing: -0.02em;
-            margin-bottom: 0.35rem;
+            margin-bottom: 0.5rem;
             text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
-        .series-title {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 1.35rem;
-            font-weight: 600;
+        header h1:last-of-type {
             margin-bottom: 1rem;
-            color: #ffffff;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
+        /* -------------------------------------------------- */
+        /* SUBTÍTULO CON NEGRITAS Y COLOR BLANCO            */
+        /* -------------------------------------------------- */
         header p {
             font-size: 1.15rem;
             color: #ffffff;
@@ -197,7 +196,7 @@
 
     <header>
         <h1>QUIMERA C3 EN LA INTERPRETACIÓN MÉDICA.</h1>
-        <div class="series-title">Serie 01: Filosofía Aplicada a la Interpretación Médica.</div>
+        <h1>Serie 01: Filosofía Aplicada a la Interpretación Médica.</h1>
         <p>Compendio filosófico de publicaciones, análisis conceptuales y metodología de la investigación en la interpretación médica.</p>
     </header>
 
