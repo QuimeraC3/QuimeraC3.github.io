@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quimera — Centro de Investigación, Docencia, Servicio y Difusión Institucional en Ciencias Médicas y Biotecnología.">
-    <title>Quimera — Centro de Investigación, Docencia y Servicio</title>
+    <meta name="description" content="Quimera C³ — Centro de Investigación, Docencia, Servicio y Difusión Institucional en Ciencias Médicas y Biotecnología.">
+    <title>Quimera C³ — Centro de Investigación, Docencia y Servicio</title>
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -36,9 +36,7 @@
             line-height: 1.6;
         }
 
-        /* -------------------------------------------------- */
-        /* NAVEGACIÓN SUPERIOR                                */
-        /* -------------------------------------------------- */
+        /* NAVEGACIÓN SUPERIOR */
         .top-bar {
             background-color: #0b1329;
             padding: 0.85rem 2rem;
@@ -67,14 +65,14 @@
 
         .nav-links {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.25rem;
             list-style: none;
         }
 
         .nav-links a {
             color: #e2e8f0;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 500;
             transition: color 0.2s ease;
         }
@@ -83,9 +81,7 @@
             color: #38bdf8;
         }
 
-        /* -------------------------------------------------- */
-        /* ENCABEZADO PORTADA (DESPLAZADO A LA DERECHA)        */
-        /* -------------------------------------------------- */
+        /* ENCABEZADO PORTADA (DESPLAZADO A LA DERECHA) */
         header {
             background: linear-gradient(rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.75)), url('Quimera.jpeg');
             background-size: cover;
@@ -129,9 +125,7 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
         }
 
-        /* -------------------------------------------------- */
-        /* CONTENEDOR PRINCIPAL                               */
-        /* -------------------------------------------------- */
+        /* CONTENEDOR PRINCIPAL */
         .container {
             max-width: 1150px;
             margin: 0 auto;
@@ -145,136 +139,116 @@
             margin-bottom: 1.75rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--border-color);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
         }
 
-        /* -------------------------------------------------- */
-        /* SECCIÓN QUIMERA INSTITUCIONAL                      */
-        /* -------------------------------------------------- */
-        .quimera-info-grid {
+        /* PILARES PRINCIPALES (3 COLUMNAS) */
+        .pillars-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 4rem;
-        }
-
-        .info-card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            box-shadow: var(--shadow);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            text-decoration: none;
-            color: inherit;
-            display: block;
-        }
-
-        .info-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
-        }
-
-        .info-card h3 {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 1.35rem;
-            color: var(--primary);
-            margin-bottom: 0.75rem;
-        }
-
-        .info-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
-        }
-
-        /* -------------------------------------------------- */
-        /* ÁREAS DE INVESTIGACIÓN, DOCENCIA Y SERVICIO        */
-        /* -------------------------------------------------- */
-        .areas-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.75rem;
             margin-bottom: 4rem;
         }
 
-        .area-card {
+        .pillar-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
             padding: 2rem;
             box-shadow: var(--shadow);
+        }
+
+        .pillar-card h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--bg-color);
+        }
+
+        .pillar-list {
+            list-style: none;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            gap: 0.6rem;
         }
 
-        .area-card:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .area-badge {
-            display: inline-block;
-            align-self: flex-start;
-            padding: 0.25rem 0.75rem;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            border-radius: 9999px;
-            background-color: #f1f5f9;
-            color: var(--primary);
-            margin-bottom: 1rem;
-        }
-
-        .area-title {
-            font-family: Georgia, "Times New Roman", serif;
-            font-size: 1.4rem;
-            color: var(--text-main);
-            margin-bottom: 0.75rem;
-        }
-
-        .area-description {
+        .pillar-list li {
+            position: relative;
+            padding-left: 1.25rem;
             color: var(--text-muted);
             font-size: 0.95rem;
-            margin-bottom: 1.75rem;
-            flex-grow: 1;
+            font-weight: 500;
         }
 
-        .btn {
-            display: inline-block;
+        .pillar-list li::before {
+            content: "├─";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-family: monospace;
+        }
+
+        .pillar-list li:last-child::before {
+            content: "└─";
+        }
+
+        /* PRODUCCIÓN ACADÉMICA */
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 4rem;
+        }
+
+        .academic-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem 1rem;
             text-align: center;
-            background-color: var(--primary);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 0.75rem 1.25rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.2s ease;
+        }
+
+        .academic-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        .academic-card h4 {
+            font-family: Georgia, "Times New Roman", serif;
+            color: var(--text-main);
+            font-size: 1.1rem;
+        }
+
+        /* METODOLOGÍA SMART */
+        .smart-section {
+            background-color: #f1f5f9;
+            border-left: 5px solid var(--primary);
             border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease;
+            padding: 2rem;
+            margin-bottom: 4rem;
         }
 
-        .btn:hover {
-            background-color: var(--primary-hover);
+        .smart-section h3 {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        /* -------------------------------------------------- */
-        /* ÓRGANO DE DIFUSIÓN (C3 NEXUS)                      */
-        /* -------------------------------------------------- */
+        /* C3 NEXUS */
         .nexus-section {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #ffffff;
             border-radius: 16px;
             padding: 3rem 2.5rem;
             box-shadow: var(--shadow-lg);
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        }
+
+        .nexus-header {
+            margin-bottom: 2rem;
         }
 
         .nexus-tag {
@@ -289,32 +263,25 @@
             font-family: Georgia, "Times New Roman", serif;
             font-size: 1.85rem;
             color: #ffffff;
+            margin-top: 0.25rem;
         }
 
-        .nexus-description {
-            color: #94a3b8;
-            font-size: 1.05rem;
-            max-width: 800px;
+        .nexus-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
         }
 
-        .btn-nexus {
-            align-self: flex-start;
-            background-color: #38bdf8;
-            color: #0f172a;
-            font-weight: 700;
-            text-decoration: none;
-            padding: 0.85rem 1.75rem;
+        .nexus-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
-            transition: background-color 0.2s ease;
+            padding: 1rem 1.25rem;
+            color: #e2e8f0;
+            font-size: 0.95rem;
         }
 
-        .btn-nexus:hover {
-            background-color: #7dd3fc;
-        }
-
-        /* -------------------------------------------------- */
-        /* ADAPTABILIDAD MÓVIL (RESPONSIVE)                   */
-        /* -------------------------------------------------- */
+        /* RESPONSIVE */
         @media (max-width: 768px) {
             header {
                 padding: 3.5rem 1.5rem;
@@ -331,9 +298,7 @@
             }
         }
 
-        /* -------------------------------------------------- */
-        /* PIE DE PÁGINA                                      */
-        /* -------------------------------------------------- */
+        /* PIE DE PÁGINA */
         footer {
             text-align: center;
             padding: 2.5rem 2rem;
@@ -354,128 +319,126 @@
     <!-- Navegación Superior -->
     <nav class="top-bar">
         <div class="top-bar-container">
-            <a href="#" class="brand-logo">Quimera</a>
+            <a href="#" class="brand-logo">Quimera C³</a>
             <ul class="nav-links">
-                <li><a href="#institucional">Quimera</a></li>
-                <li><a href="#areas">Áreas Académicas</a></li>
-                <li><a href="#difusion">C³ Nexus</a></li>
+                <li><a href="#pilares">Pilares</a></li>
+                <li><a href="#produccion">Producción</a></li>
+                <li><a href="#metodologia">Metodología</a></li>
+                <li><a href="#nexus">C³ Nexus</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Encabezado Principal Desplazado a la Derecha -->
+    <!-- Encabezado Principal -->
     <header>
-        <span class="header-tag">&bull; INSTITUTO &bull;</span>
+        <span class="header-tag">&bull; Centro Educativo &bull;</span>
         <h1>QUIMERA</h1>
         <p>Docencia, Investigación, Servicio y Difusión Institucional en Ciencias Médicas y Biotecnología.</p>
     </header>
 
     <main class="container">
 
-        <!-- Sección 1: Quimera Institucional -->
-        <section id="institucional">
-            <h2 class="section-title">Quimera Institucional</h2>
-            <div class="quimera-info-grid">
-                <a href="quimera/mision.html" class="info-card">
-                    <h3>Misión</h3>
-                    <p>Fomentar la excelencia en docencia, investigación y praxis técnica especializada en el ámbito médico-científico.</p>
-                </a>
-                <a href="quimera/vision.html" class="info-card">
-                    <h3>Visión</h3>
-                    <p>Consolidarse como el centro educativo de referencia en la formación avanzada, redacción e interpretación científica.</p>
-                </a>
-                <a href="quimera/objetivos.html" class="info-card">
-                    <h3>Objetivos</h3>
-                    <p>Desarrollar competencias transversales de alto nivel para especialistas, investigadores e intérpretes de la salud.</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Sección 2: Áreas de Investigación, Docencia, Servicio y Difusión -->
-        <section id="areas">
-            <h2 class="section-title">Áreas de Investigación, Docencia y Servicio</h2>
-            
-            <div class="areas-grid">
-
-                <!-- Area 1: Medical Affairs -->
-                <article class="area-card">
-                    <div>
-                        <span class="area-badge">Especialidad</span>
-                        <h3 class="area-title">Medical Affairs</h3>
-                        <p class="area-description">
-                            Series educativas orientadas a la adquisición de habilidades científicas y estratégicas para desarrollarse como especialista en Medical Affairs.
-                        </p>
-                    </div>
-                    <a href="medical-affairs/index.html" class="btn">Explorar Series &rarr;</a>
+        <!-- Sección 1: Pilares Institucionales (Conocimiento, Formación, Servicios) -->
+        <section id="pilares">
+            <h2 class="section-title">Estructura Institucional</h2>
+            <div class="pillars-grid">
+                
+                <!-- Pillar 1: Conocimiento -->
+                <article class="pillar-card">
+                    <h3>Conocimiento</h3>
+                    <ul class="pillar-list">
+                        <li>Medicina</li>
+                        <li>Genómica</li>
+                        <li>Bioestadística</li>
+                        <li>IA en salud</li>
+                        <li>Medical Affairs</li>
+                        <li>Medical Writing</li>
+                        <li>Interpretación</li>
+                        <li>Traducción</li>
+                    </ul>
                 </article>
 
-                <!-- Area 2: Medical Writing -->
-                <article class="area-card">
-                    <div>
-                        <span class="area-badge">Especialidad</span>
-                        <h3 class="area-title">Medical Writing</h3>
-                        <p class="area-description">
-                            Programas dedicados a la redacción científica, regulatoria y clínica para la formación integral del Escritor Médico.
-                        </p>
-                    </div>
-                    <a href="medical-writing/index.html" class="btn">Explorar Series &rarr;</a>
+                <!-- Pillar 2: Formación -->
+                <article class="pillar-card">
+                    <h3>Formación</h3>
+                    <ul class="pillar-list">
+                        <li>Cursos</li>
+                        <li>Seminarios</li>
+                        <li>Talleres</li>
+                        <li>Certificación</li>
+                        <li>Simulación</li>
+                    </ul>
                 </article>
 
-                <!-- Area 3: Medicina Genómica -->
-                <article class="area-card">
-                    <div>
-                        <span class="area-badge">Posgrado</span>
-                        <h3 class="area-title">Medicina Genómica</h3>
-                        <p class="area-description">
-                            Formación académica de alto nivel y conocimiento especializado para desarrollarse como Maestro y Doctor en ciencias en Biotecnología Genómica.
-                        </p>
-                    </div>
-                    <a href="medicina-genomica/index.html" class="btn">Explorar Series &rarr;</a>
-                </article>
-
-                <!-- Area 4: Interpretación Médica -->
-                <article class="area-card">
-                    <div>
-                        <span class="area-badge">Especialidad</span>
-                        <h3 class="area-title">Interpretación Médica</h3>
-                        <p class="area-description">
-                            Series analíticas, normativas y epistemológicas orientadas al desarrollo metodológico de la interpretación médica.
-                        </p>
-                    </div>
-                    <a href="https://quimerac3.github.io/Serie_Filosofia_Interpretacion_Medica_-_Vol._XI_Bioetica/" class="btn">Acceder al Catálogo &rarr;</a>
-                </article>
-
-                <!-- Area 5: Traducción -->
-                <article class="area-card">
-                    <div>
-                        <span class="area-badge">Especialidad</span>
-                        <h3 class="area-title">Traducción</h3>
-                        <p class="area-description">
-                            Programas de análisis conceptual, lingüístico y rigurosidad técnica para la traducción biomédica especializada.
-                        </p>
-                    </div>
-                    <a href="traduccion/index.html" class="btn">Explorar Series &rarr;</a>
+                <!-- Pillar 3: Servicios -->
+                <article class="pillar-card">
+                    <h3>Servicios</h3>
+                    <ul class="pillar-list">
+                        <li>Medical Affairs</li>
+                        <li>Medical Writing</li>
+                        <li>Traducción</li>
+                        <li>Interpretación</li>
+                        <li>Revisión</li>
+                        <li>Consultoría</li>
+                    </ul>
                 </article>
 
             </div>
         </section>
 
-        <!-- Sección 3: Órgano de Difusión Institucional (C3 Nexus) -->
-        <section id="difusion">
-            <div class="nexus-section">
-                <span class="nexus-tag">Órgano de Difusión Institucional</span>
-                <h2 class="nexus-title">C³ Nexus — Clinical Communication Center Nexus</h2>
-                <p class="nexus-description">
-                    Plataforma institucional para la divulgación de investigaciones, análisis críticos, publicaciones periódicas y proyectos académicos del Instituto Quimera.
+        <!-- Sección 2: Producción Académica -->
+        <section id="produccion">
+            <h2 class="section-title">Producción Académica</h2>
+            <div class="academic-grid">
+                <div class="academic-card">
+                    <h4>Artículos</h4>
+                </div>
+                <div class="academic-card">
+                    <h4>Guías</h4>
+                </div>
+                <div class="academic-card">
+                    <h4>Infografías</h4>
+                </div>
+                <div class="academic-card">
+                    <h4>Series</h4>
+                </div>
+                <div class="academic-card">
+                    <h4>Libros</h4>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Metodología -->
+        <section id="metodologia">
+            <div class="smart-section">
+                <h3>Metodología SMART</h3>
+                <p style="color: var(--text-muted); font-size: 1rem;">
+                    Estrategia metodológica orientada a metas específicas, medibles, alcanzables, relevantes y temporales aplicadas a la praxis médico-científica.
                 </p>
-                <a href="c3-nexus/index.html" class="btn-nexus">Acceder a C³ Nexus &rarr;</a>
+            </div>
+        </section>
+
+        <!-- Sección 4: C³ Nexus -->
+        <section id="nexus">
+            <div class="nexus-section">
+                <div class="nexus-header">
+                    <span class="nexus-tag">Plataforma Institucional</span>
+                    <h2 class="nexus-title">C³ Nexus</h2>
+                </div>
+                <div class="nexus-grid">
+                    <div class="nexus-item">├─ Biblioteca digital</div>
+                    <div class="nexus-item">├─ Laboratorio digital</div>
+                    <div class="nexus-item">├─ Herramientas</div>
+                    <div class="nexus-item">├─ Recursos</div>
+                    <div class="nexus-item">└─ Centro de comunicación clínica</div>
+                </div>
             </div>
         </section>
 
     </main>
 
     <footer>
-        <p>&copy; 2026 Instituto Quimera &bull; Centro de Investigación, Docencia, Servicio y Difusión.</p>
+        <p>&copy; 2026 Quimera C³ &bull; Centro de Investigación, Docencia, Servicio y Difusión.</p>
         <p style="margin-top: 0.5rem; font-size: 0.8rem;">Dr.C. Cesar Cerezo Camacho. Todos los derechos reservados.</p>
     </footer>
 
