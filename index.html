@@ -141,7 +141,7 @@
             border-bottom: 2px solid var(--border-color);
         }
 
-        /* PILARES PRINCIPALES (3 COLUMNAS) */
+        /* PILARES PRINCIPALES */
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -222,20 +222,58 @@
             font-size: 1.1rem;
         }
 
-        /* METODOLOGÍA SMART */
+        /* METODOLOGÍA SMART DETALLADA */
         .smart-section {
             background-color: #f1f5f9;
             border-left: 5px solid var(--primary);
             border-radius: 8px;
-            padding: 2rem;
+            padding: 2.25rem;
             margin-bottom: 4rem;
         }
 
         .smart-section h3 {
             font-family: Georgia, "Times New Roman", serif;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .smart-acronym {
+            display: inline-block;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        .smart-description {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .smart-steps {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 1rem;
+        }
+
+        .smart-steps li {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            box-shadow: var(--shadow);
+        }
+
+        .smart-steps strong {
+            color: var(--primary);
+            display: block;
+            font-size: 0.95rem;
+            margin-bottom: 0.25rem;
         }
 
         /* C3 NEXUS */
@@ -329,7 +367,7 @@
         </div>
     </nav>
 
-    <!-- Encabezado Principal -->
+    <!-- Encabezado Principal Desplazado a la Derecha -->
     <header>
         <span class="header-tag">&bull; Centro Educativo &bull;</span>
         <h1>QUIMERA</h1>
@@ -338,12 +376,11 @@
 
     <main class="container">
 
-        <!-- Sección 1: Pilares Institucionales (Conocimiento, Formación, Servicios) -->
+        <!-- Sección 1: Pilares Institucionales -->
         <section id="pilares">
             <h2 class="section-title">Estructura Institucional</h2>
             <div class="pillars-grid">
                 
-                <!-- Pillar 1: Conocimiento -->
                 <article class="pillar-card">
                     <h3>Conocimiento</h3>
                     <ul class="pillar-list">
@@ -358,7 +395,6 @@
                     </ul>
                 </article>
 
-                <!-- Pillar 2: Formación -->
                 <article class="pillar-card">
                     <h3>Formación</h3>
                     <ul class="pillar-list">
@@ -370,7 +406,6 @@
                     </ul>
                 </article>
 
-                <!-- Pillar 3: Servicios -->
                 <article class="pillar-card">
                     <h3>Servicios</h3>
                     <ul class="pillar-list">
@@ -390,31 +425,45 @@
         <section id="produccion">
             <h2 class="section-title">Producción Académica</h2>
             <div class="academic-grid">
-                <div class="academic-card">
-                    <h4>Artículos</h4>
-                </div>
-                <div class="academic-card">
-                    <h4>Guías</h4>
-                </div>
-                <div class="academic-card">
-                    <h4>Infografías</h4>
-                </div>
-                <div class="academic-card">
-                    <h4>Series</h4>
-                </div>
-                <div class="academic-card">
-                    <h4>Libros</h4>
-                </div>
+                <div class="academic-card"><h4>Artículos</h4></div>
+                <div class="academic-card"><h4>Guías</h4></div>
+                <div class="academic-card"><h4>Infografías</h4></div>
+                <div class="academic-card"><h4>Series</h4></div>
+                <div class="academic-card"><h4>Libros</h4></div>
             </div>
         </section>
 
-        <!-- Sección 3: Metodología -->
+        <!-- Sección 3: Metodología SMART -->
         <section id="metodologia">
+            <h2 class="section-title">Metodología Operativa</h2>
             <div class="smart-section">
                 <h3>Metodología SMART</h3>
-                <p style="color: var(--text-muted); font-size: 1rem;">
-                    Estrategia metodológica orientada a metas específicas, medibles, alcanzables, relevantes y temporales aplicadas a la praxis médico-científica.
+                <span class="smart-acronym">Scanning &rarr; Mapping &rarr; Analysis &rarr; Revision &rarr; Transfer</span>
+                <p class="smart-description">
+                    Originalmente desarrollada para la traductología, la arquitectura de SMART constituye un marco operativo traslacional para la gestión crítica del conocimiento. Su flujo secuencial elimina la recepción pasiva de datos e impulsa la toma de decisiones rigurosa en investigación, <em>Medical Writing</em>, docencia técnica, evaluación clínica y control de calidad.
                 </p>
+                <ul class="smart-steps">
+                    <li>
+                        <strong>Scanning</strong>
+                        Reconocimiento exploratorio y triaje inicial de evidencia o datos.
+                    </li>
+                    <li>
+                        <strong>Mapping</strong>
+                        Arquitectura conceptual, variables y diseño del flujo de trabajo.
+                    </li>
+                    <li>
+                        <strong>Analysis</strong>
+                        Exégesis crítica, evaluación metodológica y rigor técnico.
+                    </li>
+                    <li>
+                        <strong>Revision</strong>
+                        Control de calidad, verificación de sesgos y calibración.
+                    </li>
+                    <li>
+                        <strong>Transfer</strong>
+                        Traslación efectiva al entorno clínico, educativo o editorial.
+                    </li>
+                </ul>
             </div>
         </section>
 
