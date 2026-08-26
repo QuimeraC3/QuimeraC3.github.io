@@ -99,6 +99,7 @@
             letter-spacing: -0.02em;
             margin-bottom: 0.75rem;
             text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
+            text-align: center; /* Modificado: centra el título QUIMERA */
         }
 
         header h1 a {
@@ -122,7 +123,9 @@
         }
 
         .header-tag {
-            display: inline-block;
+            display: block; /* Modificado: permite auto-márgenes */
+            width: fit-content; /* Modificado: ajusta al ancho del texto */
+            margin: 0 auto 1.25rem auto; /* Modificado: centra el botón de INSTITUTO */
             background-color: var(--primary);
             color: #ffffff;
             font-size: 0.8rem;
@@ -131,7 +134,6 @@
             text-transform: uppercase;
             padding: 0.35rem 1.2rem;
             border-radius: 9999px;
-            margin-bottom: 1.25rem;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
         }
 
