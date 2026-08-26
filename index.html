@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Quimera C³ — Centro de Investigación, Docencia, Servicio y Difusión Institucional en Ciencias Médicas y Biotecnología.">
-    <title>Quimera C³ — Centro de Investigación, Docencia y Servicio</title>
+    <meta name="description" content="Quimera — Instituto de Investigación, Docencia, Servicio y Difusión Institucional en Ciencias Médicas y Biotecnología.">
+    <title>Quimera — Instituto de Investigación, Docencia y Servicio</title>
     <style>
         :root {
             --bg-color: #f8fafc;
@@ -202,23 +202,19 @@
         }
 
         .pillar-list li {
-            position: relative;
-            padding-left: 1.25rem;
             color: var(--text-muted);
             font-size: 0.95rem;
             font-weight: 500;
         }
 
-        .pillar-list li::before {
-            content: "├─";
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-family: monospace;
+        .pillar-list li a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
 
-        .pillar-list li:last-child::before {
-            content: "└─";
+        .pillar-list li a:hover {
+            color: var(--primary);
         }
 
         /* PRODUCCIÓN ACADÉMICA CON ENLACES */
@@ -414,7 +410,7 @@
             }
         }
 
-        /* PIE DE PÁGINA */
+        /* PIE DE PÁGINA CON TEXTO BLANCO VISIBLE */
         footer {
             text-align: center;
             padding: 2.5rem 2rem;
@@ -426,7 +422,7 @@
         }
 
         footer p {
-            color: #94a3b8;
+            color: #ffffff;
         }
     </style>
 </head>
@@ -435,7 +431,7 @@
     <!-- Navegación Superior -->
     <nav class="top-bar">
         <div class="top-bar-container">
-            <a href="#" class="brand-logo">Quimera C³</a>
+            <a href="#" class="brand-logo">Quimera</a>
             <ul class="nav-links">
                 <li><a href="#pilares">Pilares</a></li>
                 <li><a href="#produccion">Producción</a></li>
@@ -445,9 +441,9 @@
         </div>
     </nav>
 
-    <!-- Encabezado Principal Desplazado a la Derecha (Con Hipervínculo) -->
+    <!-- Encabezado Principal -->
     <header>
-        <span class="header-tag">&bull; Centro Educativo &bull;</span>
+        <span class="header-tag">&bull; INSTITUTO &bull;</span>
         <h1><a href="acerca/quimera.html">QUIMERA</a></h1>
         <p>Docencia, Investigación, Servicio y Difusión Institucional en Ciencias Médicas y Biotecnología.</p>
     </header>
@@ -462,37 +458,37 @@
                 <article class="pillar-card">
                     <h3><a href="conocimiento/index.html">Conocimiento <span>&rarr;</span></a></h3>
                     <ul class="pillar-list">
-                        <li>Medicina</li>
-                        <li>Genómica</li>
-                        <li>Bioestadística</li>
-                        <li>IA en salud</li>
-                        <li>Medical Affairs</li>
-                        <li>Medical Writing</li>
-                        <li>Interpretación</li>
-                        <li>Traducción</li>
+                        <li><a href="conocimiento/medicina.html">Medicina</a></li>
+                        <li><a href="conocimiento/genomica.html">Genómica</a></li>
+                        <li><a href="conocimiento/bioestadistica.html">Bioestadística</a></li>
+                        <li><a href="conocimiento/ia-en-salud.html">IA en salud</a></li>
+                        <li><a href="conocimiento/medical-affairs.html">Medical Affairs</a></li>
+                        <li><a href="conocimiento/medical-writing.html">Medical Writing</a></li>
+                        <li><a href="conocimiento/interpretacion.html">Interpretación</a></li>
+                        <li><a href="conocimiento/traduccion.html">Traducción</a></li>
                     </ul>
                 </article>
 
                 <article class="pillar-card">
                     <h3><a href="formacion/index.html">Formación <span>&rarr;</span></a></h3>
                     <ul class="pillar-list">
-                        <li>Cursos</li>
-                        <li>Seminarios</li>
-                        <li>Talleres</li>
-                        <li>Certificación</li>
-                        <li>Simulación</li>
+                        <li><a href="formacion/cursos.html">Cursos</a></li>
+                        <li><a href="formacion/seminarios.html">Seminarios</a></li>
+                        <li><a href="formacion/talleres.html">Talleres</a></li>
+                        <li><a href="formacion/certificacion.html">Certificación</a></li>
+                        <li><a href="formacion/simulacion.html">Simulación</a></li>
                     </ul>
                 </article>
 
                 <article class="pillar-card">
                     <h3><a href="servicios/index.html">Servicios <span>&rarr;</span></a></h3>
                     <ul class="pillar-list">
-                        <li>Medical Affairs</li>
-                        <li>Medical Writing</li>
-                        <li>Traducción</li>
-                        <li>Interpretación</li>
-                        <li>Revisión</li>
-                        <li>Consultoría</li>
+                        <li><a href="servicios/medical-affairs.html">Medical Affairs</a></li>
+                        <li><a href="servicios/medical-writing.html">Medical Writing</a></li>
+                        <li><a href="servicios/traduccion.html">Traducción</a></li>
+                        <li><a href="servicios/interpretacion.html">Interpretación</a></li>
+                        <li><a href="servicios/revision.html">Revisión</a></li>
+                        <li><a href="servicios/consultoria.html">Consultoría</a></li>
                     </ul>
                 </article>
 
@@ -564,19 +560,19 @@
                 </div>
                 <div class="nexus-grid">
                     <div class="nexus-item">
-                        <a href="nexus/biblioteca-digital.html">├─ Biblioteca digital <span>&rarr;</span></a>
+                        <a href="nexus/biblioteca-digital.html">Biblioteca digital <span>&rarr;</span></a>
                     </div>
                     <div class="nexus-item">
-                        <a href="nexus/laboratorio-digital.html">├─ Laboratorio digital <span>&rarr;</span></a>
+                        <a href="nexus/laboratorio-digital.html">Laboratorio digital <span>&rarr;</span></a>
                     </div>
                     <div class="nexus-item">
-                        <a href="nexus/herramientas.html">├─ Herramientas <span>&rarr;</span></a>
+                        <a href="nexus/herramientas.html">Herramientas <span>&rarr;</span></a>
                     </div>
                     <div class="nexus-item">
-                        <a href="nexus/recursos.html">├─ Recursos <span>&rarr;</span></a>
+                        <a href="nexus/recursos.html">Recursos <span>&rarr;</span></a>
                     </div>
                     <div class="nexus-item">
-                        <a href="nexus/centro-comunicacion-clinica.html">└─ Centro de comunicación clínica <span>&rarr;</span></a>
+                        <a href="nexus/centro-comunicacion-clinica.html">Centro de comunicación clínica <span>&rarr;</span></a>
                     </div>
                 </div>
             </div>
@@ -585,8 +581,8 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Quimera C³ &bull; Centro de Investigación, Docencia, Servicio y Difusión.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Dr.C. Cesar Cerezo Camacho. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Quimera &bull; Centro de Investigación, Docencia, Servicio y Difusión.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #ffffff;">Dr.C. Cesar Cerezo Camacho. Todos los derechos reservados.</p>
     </footer>
 
 </body>
