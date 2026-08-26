@@ -141,7 +141,7 @@
             border-bottom: 2px solid var(--border-color);
         }
 
-        /* PILARES PRINCIPALES */
+        /* PILARES PRINCIPALES CON ENLACES */
         .pillars-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -155,15 +155,33 @@
             border-radius: 12px;
             padding: 2rem;
             box-shadow: var(--shadow);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
         }
 
         .pillar-card h3 {
             font-family: Georgia, "Times New Roman", serif;
             font-size: 1.5rem;
-            color: var(--primary);
             margin-bottom: 1.25rem;
             padding-bottom: 0.5rem;
             border-bottom: 2px solid var(--bg-color);
+        }
+
+        .pillar-card h3 a {
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+
+        .pillar-card h3 a:hover {
+            color: var(--primary-hover);
         }
 
         .pillar-list {
@@ -193,7 +211,7 @@
             content: "└─";
         }
 
-        /* PRODUCCIÓN ACADÉMICA */
+        /* PRODUCCIÓN ACADÉMICA CON ENLACES */
         .academic-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -208,7 +226,7 @@
             padding: 1.5rem 1rem;
             text-align: center;
             box-shadow: var(--shadow);
-            transition: transform 0.2s ease;
+            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
         .academic-card:hover {
@@ -218,11 +236,23 @@
 
         .academic-card h4 {
             font-family: Georgia, "Times New Roman", serif;
-            color: var(--text-main);
             font-size: 1.1rem;
         }
 
-        /* METODOLOGÍA SMART DETALLADA */
+        .academic-card h4 a {
+            color: var(--text-main);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: color 0.2s ease;
+        }
+
+        .academic-card:hover h4 a {
+            color: var(--primary);
+        }
+
+        /* METODOLOGÍA SMART DETALLADA CON ENLACES */
         .smart-section {
             background-color: #f1f5f9;
             border-left: 5px solid var(--primary);
@@ -267,16 +297,34 @@
             border-radius: 8px;
             padding: 1rem;
             box-shadow: var(--shadow);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .smart-steps li:hover {
+            transform: translateY(-2px);
+            border-color: var(--primary);
         }
 
         .smart-steps strong {
-            color: var(--primary);
             display: block;
             font-size: 0.95rem;
             margin-bottom: 0.25rem;
         }
 
-        /* C3 NEXUS */
+        .smart-steps strong a {
+            color: var(--primary);
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.2s ease;
+        }
+
+        .smart-steps strong a:hover {
+            color: var(--primary-hover);
+        }
+
+        /* C3 NEXUS CON ENLACES */
         .nexus-section {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             color: #ffffff;
@@ -315,8 +363,28 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 8px;
             padding: 1rem 1.25rem;
-            color: #e2e8f0;
             font-size: 0.95rem;
+            transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+        }
+
+        .nexus-item:hover {
+            transform: translateY(-2px);
+            border-color: #38bdf8;
+            background-color: rgba(255, 255, 255, 0.08);
+        }
+
+        .nexus-item a {
+            color: #e2e8f0;
+            text-decoration: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            transition: color 0.2s ease;
+        }
+
+        .nexus-item a:hover {
+            color: #38bdf8;
         }
 
         /* RESPONSIVE */
@@ -382,7 +450,7 @@
             <div class="pillars-grid">
                 
                 <article class="pillar-card">
-                    <h3>Conocimiento</h3>
+                    <h3><a href="conocimiento/index.html">Conocimiento <span>&rarr;</span></a></h3>
                     <ul class="pillar-list">
                         <li>Medicina</li>
                         <li>Genómica</li>
@@ -396,7 +464,7 @@
                 </article>
 
                 <article class="pillar-card">
-                    <h3>Formación</h3>
+                    <h3><a href="formacion/index.html">Formación <span>&rarr;</span></a></h3>
                     <ul class="pillar-list">
                         <li>Cursos</li>
                         <li>Seminarios</li>
@@ -407,7 +475,7 @@
                 </article>
 
                 <article class="pillar-card">
-                    <h3>Servicios</h3>
+                    <h3><a href="servicios/index.html">Servicios <span>&rarr;</span></a></h3>
                     <ul class="pillar-list">
                         <li>Medical Affairs</li>
                         <li>Medical Writing</li>
@@ -421,15 +489,25 @@
             </div>
         </section>
 
-        <!-- Sección 2: Producción Académica -->
+        <!-- Sección 2: Producción Académica (Hipervínculos agregados) -->
         <section id="produccion">
             <h2 class="section-title">Producción Académica</h2>
             <div class="academic-grid">
-                <div class="academic-card"><h4>Artículos</h4></div>
-                <div class="academic-card"><h4>Guías</h4></div>
-                <div class="academic-card"><h4>Infografías</h4></div>
-                <div class="academic-card"><h4>Series</h4></div>
-                <div class="academic-card"><h4>Libros</h4></div>
+                <div class="academic-card">
+                    <h4><a href="produccion/articulos.html">Artículos <span>&rarr;</span></a></h4>
+                </div>
+                <div class="academic-card">
+                    <h4><a href="produccion/guias.html">Guías <span>&rarr;</span></a></h4>
+                </div>
+                <div class="academic-card">
+                    <h4><a href="produccion/infografias.html">Infografías <span>&rarr;</span></a></h4>
+                </div>
+                <div class="academic-card">
+                    <h4><a href="produccion/series.html">Series <span>&rarr;</span></a></h4>
+                </div>
+                <div class="academic-card">
+                    <h4><a href="produccion/libros.html">Libros <span>&rarr;</span></a></h4>
+                </div>
             </div>
         </section>
 
@@ -444,23 +522,23 @@
                 </p>
                 <ul class="smart-steps">
                     <li>
-                        <strong>Scanning</strong>
+                        <strong><a href="metodologia/scanning.html">Scanning <span>&rarr;</span></a></strong>
                         Reconocimiento exploratorio y triaje inicial de evidencia o datos.
                     </li>
                     <li>
-                        <strong>Mapping</strong>
+                        <strong><a href="metodologia/mapping.html">Mapping <span>&rarr;</span></a></strong>
                         Arquitectura conceptual, variables y diseño del flujo de trabajo.
                     </li>
                     <li>
-                        <strong>Analysis</strong>
+                        <strong><a href="metodologia/analysis.html">Analysis <span>&rarr;</span></a></strong>
                         Exégesis crítica, evaluación metodológica y rigor técnico.
                     </li>
                     <li>
-                        <strong>Revision</strong>
+                        <strong><a href="metodologia/revision.html">Revision <span>&rarr;</span></a></strong>
                         Control de calidad, verificación de sesgos y calibración.
                     </li>
                     <li>
-                        <strong>Transfer</strong>
+                        <strong><a href="metodologia/transfer.html">Transfer <span>&rarr;</span></a></strong>
                         Traslación efectiva al entorno clínico, educativo o editorial.
                     </li>
                 </ul>
@@ -475,11 +553,21 @@
                     <h2 class="nexus-title">C³ Nexus</h2>
                 </div>
                 <div class="nexus-grid">
-                    <div class="nexus-item">├─ Biblioteca digital</div>
-                    <div class="nexus-item">├─ Laboratorio digital</div>
-                    <div class="nexus-item">├─ Herramientas</div>
-                    <div class="nexus-item">├─ Recursos</div>
-                    <div class="nexus-item">└─ Centro de comunicación clínica</div>
+                    <div class="nexus-item">
+                        <a href="nexus/biblioteca-digital.html">├─ Biblioteca digital <span>&rarr;</span></a>
+                    </div>
+                    <div class="nexus-item">
+                        <a href="nexus/laboratorio-digital.html">├─ Laboratorio digital <span>&rarr;</span></a>
+                    </div>
+                    <div class="nexus-item">
+                        <a href="nexus/herramientas.html">├─ Herramientas <span>&rarr;</span></a>
+                    </div>
+                    <div class="nexus-item">
+                        <a href="nexus/recursos.html">├─ Recursos <span>&rarr;</span></a>
+                    </div>
+                    <div class="nexus-item">
+                        <a href="nexus/centro-comunicacion-clinica.html">└─ Centro de comunicación clínica <span>&rarr;</span></a>
+                    </div>
                 </div>
             </div>
         </section>
