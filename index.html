@@ -688,6 +688,20 @@
                 }, 600);
             });
         });
+
+        // 3. Limpieza del estado de la caché al retroceder (bfcache)
+        window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+                // Removemos la clase que difumina la página
+                document.body.classList.remove('blurred-page');
+                
+                // Nos aseguramos de que el overlay vuelva a ser transparente
+                const overlay = document.getElementById('intro-overlay');
+                if (overlay) {
+                    overlay.classList.add('fade-out');
+                }
+            }
+        });
     </script>
 
 </body>
