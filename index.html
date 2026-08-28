@@ -37,11 +37,39 @@
             transition: filter 0.6s ease, background-color 0.6s ease;
         }
 
-        /* Capa de difuminado blanco al seleccionar el título QUIMERA */
-        body.blurred-page {
-            filter: blur(8px);
+        /* -------------------------------------------------- */
+        /* CAPA DE DIFUMINADO (ENTRADA Y SALIDA)              */
+        /* -------------------------------------------------- */
+        #intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #ffffff;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 9999;
             pointer-events: none;
-            background-color: #ffffff;
+            opacity: 1;
+            transition: opacity 0.8s ease, backdrop-filter 0.8s ease;
+        }
+
+        #intro-overlay.fade-out {
+            opacity: 0;
+            backdrop-filter: blur(0px);
+            -webkit-backdrop-filter: blur(0px);
+        }
+
+        body.blurred-page {
+            pointer-events: none;
+        }
+        
+        body.blurred-page #intro-overlay {
+            opacity: 1;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            transition: opacity 0.6s ease, backdrop-filter 0.6s ease;
         }
 
         /* NAVEGACIÓN SUPERIOR */
@@ -116,15 +144,12 @@
             display: inline-block;
         }
 
-        /* Estilo base de cada letra de QUIMERA para la animación secuencial */
         .quimera-letter {
             display: inline-block;
             color: #ffffff;
-            /* Tiempos de transición escalonados de derecha a izquierda por defecto (al salir el cursor) */
             transition: color 0.25s ease;
         }
 
-        /* Transiciones secuenciales de izquierda a derecha al entrar el cursor (hover) */
         header h1 a:hover .char-q { transition-delay: 0.0s; color: #38bdf8; }
         header h1 a:hover .char-u { transition-delay: 0.05s; color: #38bdf8; }
         header h1 a:hover .char-i { transition-delay: 0.1s; color: #38bdf8; }
@@ -133,7 +158,6 @@
         header h1 a:hover .char-r { transition-delay: 0.25s; color: #38bdf8; }
         header h1 a:hover .char-a { transition-delay: 0.3s; color: #38bdf8; }
 
-        /* Retardos secuenciales de derecha a izquierda al salir el cursor (modo normal) */
         header h1 a .char-a { transition-delay: 0.0s; }
         header h1 a .char-r { transition-delay: 0.05s; }
         header h1 a .char-e { transition-delay: 0.1s; }
@@ -473,6 +497,9 @@
 </head>
 <body>
 
+    <!-- Capa de difuminado inicial/final -->
+    <div id="intro-overlay"></div>
+
     <!-- Navegación Superior -->
     <nav class="top-bar">
         <div class="top-bar-container">
@@ -631,19 +658,35 @@
     </footer>
 
     <script>
-        // Script para manejar el efecto de difuminado blanco al hacer clic en el título QUIMERA
-        const quimeraLink = document.getElementById('quimera-link');
-        quimeraLink.addEventListener('click', function(e) {
-            e.preventDefault(); // Detiene la navegación inmediata para permitir ver la transición
-            const targetUrl = this.href;
-            
-            // Aplica la clase de difuminado al documento completo
-            document.body.classList.add('blurred-page');
-            
-            // Redirige a la dirección correspondiente después de que concluya la animación de difuminado
-            setTimeout(function() {
-                window.location.href = targetUrl;
-            }, 600);
+        // 1. Efecto al ingresar a la página: mantiene la capa blanca difuminada 1 segundo y luego la desvanece
+        window.addEventListener('DOMContentLoaded', () => {
+            const overlay = document.getElementById('intro-overlay');
+            setTimeout(() => {
+                overlay.classList.add('fade-out');
+            }, 1000); 
+        });
+
+        // 2. Efecto al hacer clic en CUALQUIER enlace para difuminar la página antes de salir
+        const allLinks = document.querySelectorAll('a[href]');
+        allLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Prevenir que el efecto se active en enlaces internos (anclajes como #pilares)
+                // o en enlaces que abren en una nueva pestaña (target="_blank")
+                const href = this.getAttribute('href');
+                if (href.startsWith('#') || this.target === '_blank') {
+                    return; 
+                }
+
+                e.preventDefault(); 
+                const targetUrl = this.href;
+                
+                // Activar la capa blanca
+                document.body.classList.add('blurred-page');
+                
+                setTimeout(() => {
+                    window.location.href = targetUrl;
+                }, 600);
+            });
         });
     </script>
 
