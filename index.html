@@ -34,6 +34,14 @@
             background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
+            transition: filter 0.6s ease, background-color 0.6s ease;
+        }
+
+        /* Capa de difuminado blanco al seleccionar el título QUIMERA */
+        body.blurred-page {
+            filter: blur(8px);
+            pointer-events: none;
+            background-color: #ffffff;
         }
 
         /* NAVEGACIÓN SUPERIOR */
@@ -99,18 +107,40 @@
             letter-spacing: -0.02em;
             margin-bottom: 0.75rem;
             text-shadow: 0 3px 6px rgba(0, 0, 0, 0.7);
-            text-align: center; /* Modificado: centra el título QUIMERA */
+            text-align: center;
         }
 
         header h1 a {
             color: #ffffff;
             text-decoration: none;
-            transition: color 0.2s ease;
+            display: inline-block;
         }
 
-        header h1 a:hover {
-            color: #38bdf8;
+        /* Estilo base de cada letra de QUIMERA para la animación secuencial */
+        .quimera-letter {
+            display: inline-block;
+            color: #ffffff;
+            /* Tiempos de transición escalonados de derecha a izquierda por defecto (al salir el cursor) */
+            transition: color 0.25s ease;
         }
+
+        /* Transiciones secuenciales de izquierda a derecha al entrar el cursor (hover) */
+        header h1 a:hover .char-q { transition-delay: 0.0s; color: #38bdf8; }
+        header h1 a:hover .char-u { transition-delay: 0.05s; color: #38bdf8; }
+        header h1 a:hover .char-i { transition-delay: 0.1s; color: #38bdf8; }
+        header h1 a:hover .char-m { transition-delay: 0.15s; color: #38bdf8; }
+        header h1 a:hover .char-e { transition-delay: 0.2s; color: #38bdf8; }
+        header h1 a:hover .char-r { transition-delay: 0.25s; color: #38bdf8; }
+        header h1 a:hover .char-a { transition-delay: 0.3s; color: #38bdf8; }
+
+        /* Retardos secuenciales de derecha a izquierda al salir el cursor (modo normal) */
+        header h1 a .char-a { transition-delay: 0.0s; }
+        header h1 a .char-r { transition-delay: 0.05s; }
+        header h1 a .char-e { transition-delay: 0.1s; }
+        header h1 a .char-m { transition-delay: 0.15s; }
+        header h1 a .char-i { transition-delay: 0.2s; }
+        header h1 a .char-u { transition-delay: 0.25s; }
+        header h1 a .char-q { transition-delay: 0.3s; }
 
         header p {
             font-size: 1.25rem;
@@ -123,9 +153,9 @@
         }
 
         .header-tag {
-            display: block; /* Modificado: permite auto-márgenes */
-            width: fit-content; /* Modificado: ajusta al ancho del texto */
-            margin: 0 auto 1.25rem auto; /* Modificado: centra el botón de INSTITUTO */
+            display: block;
+            width: fit-content;
+            margin: 0 auto 1.25rem auto;
             background-color: var(--primary);
             color: #ffffff;
             font-size: 0.8rem;
@@ -459,7 +489,7 @@
     <!-- Encabezado Principal -->
     <header>
         <span class="header-tag">&bull; INSTITUTO &bull;</span>
-        <h1><a href="https://quimerac3.github.io/QuimeraC3-Q/">QUIMERA</a></h1>
+        <h1><a href="https://quimerac3.github.io/QuimeraC3-Q/" id="quimera-link"><span class="quimera-letter char-q">Q</span><span class="quimera-letter char-u">U</span><span class="quimera-letter char-i">I</span><span class="quimera-letter char-m">M</span><span class="quimera-letter char-e">E</span><span class="quimera-letter char-r">R</span><span class="quimera-letter char-a">A</span></a></h1>
         <p>Docencia, Investigación, Servicio y Difusión Institucional en Ciencias Médicas y Biotecnología.</p>
     </header>
 
@@ -599,6 +629,23 @@
         <p>&copy; 2026 Instituto Quimera &bull; Centro de Investigación, Docencia, Servicio y Difusión.</p>
         <p style="margin-top: 0.5rem; font-size: 0.8rem; color: #ffffff;">Dr.C. Cesar Cerezo Camacho. Todos los derechos reservados.</p>
     </footer>
+
+    <script>
+        // Script para manejar el efecto de difuminado blanco al hacer clic en el título QUIMERA
+        const quimeraLink = document.getElementById('quimera-link');
+        quimeraLink.addEventListener('click', function(e) {
+            e.preventDefault(); // Detiene la navegación inmediata para permitir ver la transición
+            const targetUrl = this.href;
+            
+            // Aplica la clase de difuminado al documento completo
+            document.body.classList.add('blurred-page');
+            
+            // Redirige a la dirección correspondiente después de que concluya la animación de difuminado
+            setTimeout(function() {
+                window.location.href = targetUrl;
+            }, 600);
+        });
+    </script>
 
 </body>
 </html>
